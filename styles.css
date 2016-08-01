@@ -1,0 +1,68 @@
+html {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box; }
+
+.center {
+  margin: 0 auto;
+  max-width: 60%; }
+
+.header {
+  max-width: 100%;
+  border-top: 10px solid #2ecc71;
+  background-image: url(img/header_background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  margin: 0 auto; }
+  .header__left-wrapper {
+    max-width: 45%;
+    display: inline-block; }
+  .header__logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 60px;
+    letter-spacing: 2px;
+    max-width: 50%;
+    display: inline-block; }
+  .header__heading {
+    font-family: 'Raleway',serif;
+    font-size: 22px;
+    font-weight: 600; }
+  .header__download .header__download--mac {
+    object-fit: none;
+    width: 50px;
+    height: 50px;
+    object-position: 0 0;
+    transition: all .2s ease;
+    border-radius: 50%; }
+    .header__download .header__download--mac:hover {
+      object-position: 0 -50px; }
+  .header__download .header__download--android {
+    object-fit: none;
+    width: 50px;
+    height: 50px;
+    object-position: -50px 0;
+    transition: all .2s ease;
+    border-radius: 50%; }
+    .header__download .header__download--android:hover {
+      object-position: -50px -50px; }
+  .header__download .header__download--windows {
+    object-fit: none;
+    width: 50px;
+    height: 50px;
+    object-position: -100px 0;
+    transition: all .2s ease;
+    border-radius: 50%;
+    display: inline-block; }
+    .header__download .header__download--windows:hover {
+      object-position: -100px -50px; }
+  .header__app {
+    max-width: 40%;
+    padding-top: 10%;
+    display: inline-block;
+    vertical-align: baseline; }
+
+#period {
+  color: #2ecc71; }
+
+/*# sourceMappingURL=styles.css.map */
