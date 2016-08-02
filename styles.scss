@@ -51,8 +51,7 @@ body{
 
   &__download{
     display: inline-block;
-    padding-bottom: 20%;
-    .header__download--mac{
+    &--mac{
       width: 50px;
       height: 50px;
       background-image: url("img/logoSprites.jpg");
@@ -63,7 +62,7 @@ body{
         background-position: 0 0;
       }
     }
-    .header__download--android{
+    &--android{
       width: 50px;
       height: 50px;
       background-image: url("img/logoSprites.jpg");
@@ -74,7 +73,7 @@ body{
         background-position: -50px 0px;
       }
     }
-    .header__download--windows{
+    &--windows{
       width: 50px;
       height: 50px;
       background-image: url("img/logoSprites.jpg");
@@ -145,7 +144,6 @@ body{
 }//end features
 
 //cta styles
-
 .cta{
 background-color: #e3e3e3;
 width: 100%;
@@ -207,3 +205,196 @@ width: 100%;
     border-radius: 10px;
   }
 }//end cta
+
+//company styles
+.company{
+  text-align: center;
+  &__quote{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    color: #848484;
+    max-width: 50%;
+    margin: 0 auto;
+
+  }
+  &__people{
+    list-style: none
+  }
+  &__person{
+    width:50px;
+    height:50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    &:hover #overlay{
+      opacity:1;
+    }
+    &--IgnacioNader{
+      background-image: url("img/people/1.jpg");
+    }
+    &--GarrickKoch{
+      background-image: url("img/people/2.jpg");
+    }
+    &--JordaneAbernathy{
+      background-image: url("img/people/3.jpg");
+    }
+    &--ClintJast{
+      background-image: url("img/people/4.jpg");
+    }
+    &--DaveBayer{
+      background-image: url("img/people/5.jpg");
+    }
+    &--AshlyDurgan{
+      background-image: url("img/people/6.jpg");
+    }
+    &--MinervaDare{
+      background-image: url("img/people/7.jpg");
+    }
+    &--DanikaLittel{
+      background-image: url("img/people/8.jpg");
+    }
+    &--KipSchinner{
+      background-image: url("img/people/9.jpg");
+    }
+    &--AdanKemmer{
+      background-image: url("img/people/10.jpg");
+    }
+    &--ArmandoLang{
+      background-image: url("img/people/11.jpg");
+    }
+    &--MckennaSchmeler{
+      background-image: url("img/people/12.jpg");
+    }
+    &--FletaMcKenzie{
+      background-image: url("img/people/13.jpg");
+    }
+    &--EliezerMedhurst{
+      background-image: url("img/people/14.jpg");
+    }
+    &--GunnarKoelpin{
+      background-image: url("img/people/15.jpg");
+    }
+    &--BradleyStark{
+      background-image: url("img/people/16.jpg");
+    }
+    &--BentonHane{
+      background-image: url("img/people/17.jpg");
+    }
+    &--JulioBailey{
+      background-image: url("img/people/18.jpg");
+    }
+  }
+}
+#overlay{  background:rgba(46,204,113,.75);
+    text-align:center;
+    padding:25px 25px ;
+    opacity:0;
+    -webkit-transition: opacity .25s ease;
+    -moz-transition: opacity .25s ease;}
+//end company style
+
+.social{
+  text-align: center;
+  &__heading{
+    font-family: "Raleway",serif;
+    font-weight: 800;
+    font-size: 24px;
+  }
+  &__desc{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+  }
+  &__links{
+
+  }
+  &__icon{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    &--twitter{
+      width: 36px;
+      height: 36px;
+      background-image: url("img/social-sprites.jpg");
+      background-position: 0 0;
+      transition: all .2s ease;
+      border-radius: 50%;
+      &:hover{
+        background-position: 0px -36px;
+      }
+    }
+    &--facebook{
+      width: 36px;
+      height: 36px;
+      background-image: url("img/social-sprites.jpg");
+      background-position: -36px 0;
+      transition: all .2s ease;
+      border-radius: 50%;
+      &:hover{
+        background-position: -36px -36px;
+      }
+    }
+    &--pinterest{
+      width: 36px;
+      height: 36px;
+      background-image: url("img/social-sprites.jpg");
+      background-position:  -72px 0;
+      transition: all .2s ease;
+      border-radius: 50%;
+      &:hover{
+        background-position: -72px -36px;
+      }
+    }
+    &--google{
+      width: 36px;
+      height: 36px;
+      background-image: url("img/social-sprites.jpg");
+      background-position: -108px 0;
+      transition: all .2s ease;
+      border-radius: 50%;
+      &:hover{
+        background-position: -108px -36px;
+      }
+    }
+    &--linkdin{
+      width: 36px;
+      height: 36px;
+      background-image: url("img/social-sprites.jpg");
+      background-position: -144px 0;
+      transition: all .2s ease;
+      border-radius: 50%;
+      &:hover{
+        background-position: -144px -36px;
+      }
+    }
+    &--youtube{
+      width: 36px;
+      height: 36px;
+      background-image: url("img/social-sprites.jpg");
+      background-position: -180px 0;
+      transition: all .2s ease;
+      border-radius: 50%;
+      &:hover{
+        background-position: -180px -36px;
+      }
+    }
+  }//end icon
+}//end social
+
+.footer{
+  background-color: #e3e3e3;
+  width: 100%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+
+  &__link{
+    text-align: center;
+    text-decoration: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color:#848484;
+    margin: 10% 0;
+  }
+}

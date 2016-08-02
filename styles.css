@@ -43,27 +43,26 @@ body {
     font-size: 22px;
     font-weight: 600; }
   .header__download {
-    display: inline-block;
-    padding-bottom: 20%; }
-    .header__download .header__download--mac {
+    display: inline-block; }
+    .header__download--mac {
       width: 50px;
       height: 50px;
       background-image: url("img/logoSprites.jpg");
       background-position: 0 -50px;
       transition: all .2s ease;
       border-radius: 50%; }
-      .header__download .header__download--mac:hover {
+      .header__download--mac:hover {
         background-position: 0 0; }
-    .header__download .header__download--android {
+    .header__download--android {
       width: 50px;
       height: 50px;
       background-image: url("img/logoSprites.jpg");
       background-position: -50px -50px;
       transition: all .2s ease;
       border-radius: 50%; }
-      .header__download .header__download--android:hover {
+      .header__download--android:hover {
         background-position: -50px 0px; }
-    .header__download .header__download--windows {
+    .header__download--windows {
       width: 50px;
       height: 50px;
       background-image: url("img/logoSprites.jpg");
@@ -71,7 +70,7 @@ body {
       transition: all .2s ease;
       border-radius: 50%;
       display: inline-block; }
-      .header__download .header__download--windows:hover {
+      .header__download--windows:hover {
         background-position: -100px 0; }
   .header__app {
     max-width: 55%;
@@ -167,5 +166,152 @@ body {
     margin-top: 3.5%;
     border: none;
     border-radius: 10px; }
+
+.company {
+  text-align: center; }
+  .company__quote {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    color: #848484;
+    max-width: 50%;
+    margin: 0 auto; }
+  .company__people {
+    list-style: none; }
+  .company__person {
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block; }
+    .company__person:hover #overlay {
+      opacity: 1; }
+    .company__person--IgnacioNader {
+      background-image: url("img/people/1.jpg"); }
+    .company__person--GarrickKoch {
+      background-image: url("img/people/2.jpg"); }
+    .company__person--JordaneAbernathy {
+      background-image: url("img/people/3.jpg"); }
+    .company__person--ClintJast {
+      background-image: url("img/people/4.jpg"); }
+    .company__person--DaveBayer {
+      background-image: url("img/people/5.jpg"); }
+    .company__person--AshlyDurgan {
+      background-image: url("img/people/6.jpg"); }
+    .company__person--MinervaDare {
+      background-image: url("img/people/7.jpg"); }
+    .company__person--DanikaLittel {
+      background-image: url("img/people/8.jpg"); }
+    .company__person--KipSchinner {
+      background-image: url("img/people/9.jpg"); }
+    .company__person--AdanKemmer {
+      background-image: url("img/people/10.jpg"); }
+    .company__person--ArmandoLang {
+      background-image: url("img/people/11.jpg"); }
+    .company__person--MckennaSchmeler {
+      background-image: url("img/people/12.jpg"); }
+    .company__person--FletaMcKenzie {
+      background-image: url("img/people/13.jpg"); }
+    .company__person--EliezerMedhurst {
+      background-image: url("img/people/14.jpg"); }
+    .company__person--GunnarKoelpin {
+      background-image: url("img/people/15.jpg"); }
+    .company__person--BradleyStark {
+      background-image: url("img/people/16.jpg"); }
+    .company__person--BentonHane {
+      background-image: url("img/people/17.jpg"); }
+    .company__person--JulioBailey {
+      background-image: url("img/people/18.jpg"); }
+
+#overlay {
+  background: rgba(46, 204, 113, 0.75);
+  text-align: center;
+  padding: 25px 25px;
+  opacity: 0;
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease; }
+
+.social {
+  text-align: center; }
+  .social__heading {
+    font-family: "Raleway",serif;
+    font-weight: 800;
+    font-size: 24px; }
+  .social__desc {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300; }
+  .social__icon {
+    width: 100px;
+    height: 100px;
+    display: inline-block; }
+    .social__icon--twitter {
+      width: 36px;
+      height: 36px;
+      background-image: url("img/social-sprites.jpg");
+      background-position: 0 0;
+      transition: all .2s ease;
+      border-radius: 50%; }
+      .social__icon--twitter:hover {
+        background-position: 0px -36px; }
+    .social__icon--facebook {
+      width: 36px;
+      height: 36px;
+      background-image: url("img/social-sprites.jpg");
+      background-position: -36px 0;
+      transition: all .2s ease;
+      border-radius: 50%; }
+      .social__icon--facebook:hover {
+        background-position: -36px -36px; }
+    .social__icon--pinterest {
+      width: 36px;
+      height: 36px;
+      background-image: url("img/social-sprites.jpg");
+      background-position: -72px 0;
+      transition: all .2s ease;
+      border-radius: 50%; }
+      .social__icon--pinterest:hover {
+        background-position: -72px -36px; }
+    .social__icon--google {
+      width: 36px;
+      height: 36px;
+      background-image: url("img/social-sprites.jpg");
+      background-position: -108px 0;
+      transition: all .2s ease;
+      border-radius: 50%; }
+      .social__icon--google:hover {
+        background-position: -108px -36px; }
+    .social__icon--linkdin {
+      width: 36px;
+      height: 36px;
+      background-image: url("img/social-sprites.jpg");
+      background-position: -144px 0;
+      transition: all .2s ease;
+      border-radius: 50%; }
+      .social__icon--linkdin:hover {
+        background-position: -144px -36px; }
+    .social__icon--youtube {
+      width: 36px;
+      height: 36px;
+      background-image: url("img/social-sprites.jpg");
+      background-position: -180px 0;
+      transition: all .2s ease;
+      border-radius: 50%; }
+      .social__icon--youtube:hover {
+        background-position: -180px -36px; }
+
+.footer {
+  background-color: #e3e3e3;
+  width: 100%;
+  padding-top: 4%;
+  padding-bottom: 4%; }
+  .footer__link {
+    text-align: center;
+    text-decoration: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #848484;
+    margin: 10% 0; }
 
 /*# sourceMappingURL=styles.css.map */
