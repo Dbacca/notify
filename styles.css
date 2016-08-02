@@ -1,11 +1,19 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
 html {
-  margin: 0 auto;
-  padding: 0;
   box-sizing: border-box; }
 
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  padding: 0;
+  margin: 0; }
+
 .center {
-  margin: 0 auto;
-  max-width: 60%; }
+  width: 100% auto;
+  height: 100%;
+  position: absolute;
+  margin: 0 auto; }
 
 .header {
   max-width: 100%;
@@ -14,10 +22,16 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   color: #fff;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding-bottom: 37.6%;
+  background-size: 100% auto;
+  position: relative;
+  width: 100%; }
   .header__left-wrapper {
     max-width: 45%;
-    display: inline-block; }
+    display: inline-block;
+    padding: 0;
+    vertical-align: middle; }
   .header__logo {
     font-family: 'Pacifico', cursive;
     font-size: 60px;
@@ -25,44 +39,133 @@ html {
     max-width: 50%;
     display: inline-block; }
   .header__heading {
-    font-family: 'Raleway',serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 22px;
     font-weight: 600; }
-  .header__download .header__download--mac {
-    object-fit: none;
-    width: 50px;
-    height: 50px;
-    object-position: 0 0;
-    transition: all .2s ease;
-    border-radius: 50%; }
-    .header__download .header__download--mac:hover {
-      object-position: 0 -50px; }
-  .header__download .header__download--android {
-    object-fit: none;
-    width: 50px;
-    height: 50px;
-    object-position: -50px 0;
-    transition: all .2s ease;
-    border-radius: 50%; }
-    .header__download .header__download--android:hover {
-      object-position: -50px -50px; }
-  .header__download .header__download--windows {
-    object-fit: none;
-    width: 50px;
-    height: 50px;
-    object-position: -100px 0;
-    transition: all .2s ease;
-    border-radius: 50%;
-    display: inline-block; }
-    .header__download .header__download--windows:hover {
-      object-position: -100px -50px; }
-  .header__app {
-    max-width: 40%;
-    padding-top: 10%;
+  .header__download {
     display: inline-block;
-    vertical-align: baseline; }
+    padding-bottom: 20%; }
+    .header__download .header__download--mac {
+      width: 50px;
+      height: 50px;
+      background-image: url("img/logoSprites.jpg");
+      background-position: 0 -50px;
+      transition: all .2s ease;
+      border-radius: 50%; }
+      .header__download .header__download--mac:hover {
+        background-position: 0 0; }
+    .header__download .header__download--android {
+      width: 50px;
+      height: 50px;
+      background-image: url("img/logoSprites.jpg");
+      background-position: -50px -50px;
+      transition: all .2s ease;
+      border-radius: 50%; }
+      .header__download .header__download--android:hover {
+        background-position: -50px 0px; }
+    .header__download .header__download--windows {
+      width: 50px;
+      height: 50px;
+      background-image: url("img/logoSprites.jpg");
+      background-position: -100px -50px;
+      transition: all .2s ease;
+      border-radius: 50%;
+      display: inline-block; }
+      .header__download .header__download--windows:hover {
+        background-position: -100px 0; }
+  .header__app {
+    max-width: 55%;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle; }
 
 #period {
   color: #2ecc71; }
+
+.features__list {
+  list-style: none;
+  margin-top: 3.5%;
+  margin-bottom: 4%; }
+.features__item {
+  text-align: center;
+  max-width: 30%;
+  display: inline-block; }
+.features__icon {
+  width: 100px;
+  height: 100px;
+  display: inline-block; }
+  .features__icon--gear {
+    background-image: url("img/gear-icon.jpg");
+    background-position: center; }
+  .features__icon--star {
+    background-image: url("img/star-icon.jpg");
+    background-position: center; }
+  .features__icon--globe {
+    background-image: url("img/globe-icon.jpg");
+    background-position: center; }
+.features__heading {
+  font-family: 'Raleway',serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #222222; }
+.features__desc {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #848484;
+  line-height: 26px; }
+
+.cta {
+  background-color: #e3e3e3;
+  width: 100%; }
+  .cta__content {
+    display: inline-block;
+    max-width: 33%;
+    vertical-align: top;
+    margin-right: 4%;
+    margin-left: 13%;
+    margin-top: 2%;
+    margin-bottom: 8.5%; }
+  .cta__heading {
+    font-family: 'Raleway',serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #222222; }
+  .cta__desc {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    color: #848484; }
+  .cta__input {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 4% 16.2%;
+    margin-right: 0;
+    display: inline-block;
+    vertical-align: middle; }
+  .cta__button {
+    background-color: #2ecc71;
+    font-family: "Raleway",serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #fff;
+    border: none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 3% 6%;
+    margin-left: 0;
+    display: inline-block;
+    vertical-align: middle; }
+  .cta__video {
+    display: inline-block;
+    max-width: 32%;
+    vertical-align: top;
+    margin-left: 4%;
+    margin-right: 13%;
+    margin-top: 3.5%;
+    border: none;
+    border-radius: 10px; }
 
 /*# sourceMappingURL=styles.css.map */
