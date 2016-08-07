@@ -10,10 +10,8 @@ body {
   margin: 0; }
 
 .center {
-  width: 100% auto;
-  height: 100%;
-  position: absolute;
-  margin: 0 auto; }
+  margin: 0 auto;
+  width: 70%; }
 
 .header {
   max-width: 100%;
@@ -23,7 +21,6 @@ body {
   background-repeat: no-repeat;
   color: #fff;
   margin: 0 auto;
-  padding-bottom: 37.6%;
   background-size: 100% auto;
   position: relative;
   width: 100%; }
@@ -76,7 +73,8 @@ body {
     max-width: 55%;
     padding: 0;
     display: inline-block;
-    vertical-align: middle; }
+    vertical-align: middle;
+    margin-top: 10vw; }
 
 #period {
   color: #2ecc71; }

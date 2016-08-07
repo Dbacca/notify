@@ -1,11 +1,12 @@
 $(function(){
   $('.company__person').on('mouseover',function(){
-  console.log("mouse over active");
-  //create a variable for the name attribute
-  var name = $(this).attr('name');
-  console.log(name);
-  console.log(this);
-  console.log($('.company__person-name'));
-  document.getElementsByClassName('.company__person-name').innerHTML = name;
-});
+    //console.log("mouse over active");
+    //create a variable for the name attribute
+    var name = $(this).attr('name');
+    console.log(name);
+    $('.company__person-name').text(name);
+  });
+  $('.company__person').on('mouseout',function(){
+      $('.company__person-name').html('&nbsp;');
+  });
 });
