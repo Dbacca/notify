@@ -1,4 +1,26 @@
 /* apply a natural box layout model to all elements, but allowing components to change */
+// @mixin aspect-ratio($width, $height) {
+//   position: relative;
+//   &:before {
+//     display: block;
+//     content: "";
+//     width: 100%;
+//     padding-top: ($height / $width) * 100%;
+//   }
+//   > .content {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//   }
+// }
+
+// .sixteen-nine{
+// @include aspect-ratio(493,507);
+//
+// }
+
 html {
   box-sizing: border-box;
 }
@@ -6,38 +28,45 @@ html {
   box-sizing: inherit;
 }
 body{
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 .center{
-  margin: 0 auto;
   width: 70%;
+  margin: 0 auto;
 }
 //header styles
 .header{
+  position: relative;
+
+  width: 100%;
   max-width: 100%;
+  margin: 0 auto;
+
+  color: #fff;
   border-top: 10px solid #2ecc71;
   background-image: url(img/header_background.jpg);
-  background-position: center;
   background-repeat: no-repeat;
-  color: #fff;
-  margin: 0 auto;
+  background-position: center;
   background-size: 100% auto;
-  position: relative;
-  width: 100%;
 
   &__left-wrapper{
-    max-width: 45%;
     display: inline-block;
+
+    max-width: 44%;
     padding: 0;
+
     vertical-align: middle;
   }
   &__logo{
+    display: inline-block;
+
+    max-width: 50%;
+
+    letter-spacing: 2px;
+
     font-family: 'Pacifico', cursive;
     font-size:60px;
-    letter-spacing: 2px;
-    max-width: 50%;
-    display: inline-block;
   }
 
   &__heading{
@@ -51,10 +80,12 @@ body{
     &--mac{
       width: 50px;
       height: 50px;
+
+      transition: all .2s ease;
+
+      border-radius: 50%;
       background-image: url("img/logoSprites.jpg");
       background-position: 0 -50px;
-      transition: all .2s ease;
-      border-radius: 50%;
       &:hover{
         background-position: 0 0;
       }
@@ -62,55 +93,82 @@ body{
     &--android{
       width: 50px;
       height: 50px;
+
+      transition: all .2s ease;
+
+      border-radius: 50%;
       background-image: url("img/logoSprites.jpg");
       background-position: -50px -50px;
-      transition: all .2s ease;
-      border-radius: 50%;
       &:hover{
         background-position: -50px 0px;
       }
     }
     &--windows{
+      display: inline-block;
+
       width: 50px;
       height: 50px;
+
+      transition: all .2s ease;
+
+      border-radius: 50%;
       background-image: url("img/logoSprites.jpg");
       background-position: -100px -50px;
-      transition: all .2s ease;
-      border-radius: 50%;
-      display: inline-block;
       &:hover{
         background-position: -100px 0;
       }
     }
   }
   &__app{
-    max-width: 55%;
-    padding: 0;
     display: inline-block;
-    vertical-align: middle;
+
+    max-width: 55%;
+    height: auto;
     margin-top: 10vw;
+    padding: 0;
+
+    vertical-align: middle;
   }
 }
 #period{
   color: #2ecc71;
 }
+//media queries for header
+@media screen and(max-width: 780px) {
+  .header__app{
+    display: none;
+  }
+  .header__left-wrapper{
+    max-width: 100%;
+    margin-bottom: 8%;
+
+    text-align: center;
+  }
+}
+
+
+
 //features section styles
 .features{
 
   &__list{
-    list-style: none;
     margin-top: 3.5%;
     margin-bottom: 4%;
+
+    list-style: none;
   }
   &__item{
-    text-align: center;
-    max-width: 30%;
     display: inline-block;
+
+    max-width: 30%;
+
+    text-align: center;
   }
   &__icon{
+    display: inline-block;
+
     width: 100px;
     height: 100px;
-    display: inline-block;
     &--gear{
       background-image: url("img/gear-icon.jpg");
       background-position: center;
@@ -128,94 +186,164 @@ body{
     }
   }//end icon
   &__heading{
+  color: #222222 ;
+
   font-family: 'Raleway',serif;
   font-size: 22px;
   font-weight: 600;
-  color: #222222 ;
   }
   &__desc{
+    color: #848484;
+
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
-    color: #848484;
     line-height: 26px;
   }
 }//end features
+//media queries for features
+@media screen and (max-width: 780px) {
+  .features__list{
+    padding:0;
+    text-align: center;
+  }
+  .features__item{
+    max-width: 100%;
+  }
+  .features__desc{
+    max-width: 65%;
+    margin: 0 auto;
+  }
+  .features__heading{
+    margin-bottom: 1%;
+  }
+  .features__icon{
+    margin-top: 4%
+  }
+}
+
+@media screen and (max-width:390px) {
+  .features__desc{
+    max-width: 90%;
+  }
+}
+
 
 //cta styles
 .cta{
-background-color: #e3e3e3;
 width: 100%;
+
+background-color: #e3e3e3;
   &__content{
     display: inline-block;
+
     max-width: 33%;
-    vertical-align: top;
-    margin-right: 4%;
-    margin-left: 13%;
     margin-top: 2%;
+    margin-right: 4%;
     margin-bottom: 8.5%;
+    margin-left: 13%;
+
+    vertical-align: top;
   }
   &__heading{
+    color: #222222 ;
+
     font-family: 'Raleway',serif;
     font-size: 22px;
     font-weight: 600;
-    color: #222222 ;
   }
   &__desc{
+    color: #848484;
+
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 26px;
-    color: #848484;
   }
   &__input{
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 18px;
+    display: inline-block;
+
+    width: 63%;
+    height: 60px;
+    margin-right: 0;
+    padding: 4% 16.2%;
+    padding: 0 7%;
+
+    vertical-align: middle;
+
     border: 1px solid #ccc;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    padding: 4% 16.2%;
-    margin-right: 0;
-    display: inline-block;
-    vertical-align: middle;
+
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 3.3;
 
   }
   &__button{
-    background-color: #2ecc71;
-    font-family: "Raleway",serif;
-    font-weight: 800;
-    font-size: 22px;
+    display: inline-block;
+
+    height: 60px;
+    padding: 0 6%;
+
+    vertical-align: middle;
+
     color: #fff;
     border: none;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    padding: 3% 6%;
-    margin-left: 0;
-    display: inline-block;
-    vertical-align: middle;
+    background-color: #2ecc71;
+
+    font-family: "Raleway",serif;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 2.72;
   }
   &__video{
     display: inline-block;
+
     max-width: 32%;
-    vertical-align: top;
-    margin-left: 4%;
-    margin-right: 13%;
     margin-top: 3.5%;
+    margin-right: 13%;
+    margin-left: 4%;
+
+    vertical-align: top;
+
     border: none;
     border-radius: 10px;
   }
 }//end cta
+//media queries for cta
+@media screen and (max-width: 780px) {
+  .cta{
+    text-align: center;
+  }
+  .cta__content{
+    max-width: 100%;
+  }
+  .cta__desc{
+    max-width: 80%;
+    padding-bottom: 5%;
+  }
+  .cta__video{
+    max-width: 100%;
+    margin: 0;
+    margin-bottom: 4%;
+  }
+}
 
 //company styles
 .company{
   text-align: center;
   &__quote{
+    max-width: 30%;
+    margin: 0 auto;
+    padding: 2% 0%;
+
+    color: #848484;
+
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 18px;
     font-weight: 300;
     font-style: italic;
-    color: #848484;
-    max-width: 30%;
-    margin: 0 auto;
-    padding: 2% 0%;
 
   }
   &__people{
@@ -226,11 +354,13 @@ width: 100%;
     font-size: 18px;
   }
   &__person{
+    display: inline-block;
+
     width:50px;
     height:50px;
+
     background-repeat: no-repeat;
     background-position: center;
-    display: inline-block;
     &:hover #overlay{
       opacity:1;
     }
@@ -290,21 +420,24 @@ width: 100%;
     }
   }
 }
-#overlay{  background:rgba(46,204,113,.75);
-    text-align:center;
+#overlay{
     padding:25px 25px ;
-    opacity:0;
+
     -webkit-transition: opacity .25s ease;
-    -moz-transition: opacity .25s ease;}
+    -moz-transition: opacity .25s ease;
+    text-align:center;
+
+    opacity:0;  background:rgba(46,204,113,.75);}
 //end company style
 
 .social{
-  text-align: center;
   margin-bottom: 5%;
+
+  text-align: center;
   &__heading{
     font-family: "Raleway",serif;
-    font-weight: 800;
     font-size: 24px;
+    font-weight: 800;
   }
   &__desc{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -315,16 +448,19 @@ width: 100%;
 
   }
   &__icon{
+    display: inline-block;
+
     width: 100px;
     height: 100px;
-    display: inline-block;
     &--twitter{
       width: 36px;
       height: 36px;
+
+      transition: all .2s ease;
+
+      border-radius: 50%;
       background-image: url("img/social-sprites.jpg");
       background-position: 0 0;
-      transition: all .2s ease;
-      border-radius: 50%;
       &:hover{
         background-position: 0px -36px;
       }
@@ -332,10 +468,12 @@ width: 100%;
     &--facebook{
       width: 36px;
       height: 36px;
+
+      transition: all .2s ease;
+
+      border-radius: 50%;
       background-image: url("img/social-sprites.jpg");
       background-position: -36px 0;
-      transition: all .2s ease;
-      border-radius: 50%;
       &:hover{
         background-position: -36px -36px;
       }
@@ -343,10 +481,12 @@ width: 100%;
     &--pinterest{
       width: 36px;
       height: 36px;
+
+      transition: all .2s ease;
+
+      border-radius: 50%;
       background-image: url("img/social-sprites.jpg");
       background-position:  -72px 0;
-      transition: all .2s ease;
-      border-radius: 50%;
       &:hover{
         background-position: -72px -36px;
       }
@@ -354,10 +494,12 @@ width: 100%;
     &--google{
       width: 36px;
       height: 36px;
+
+      transition: all .2s ease;
+
+      border-radius: 50%;
       background-image: url("img/social-sprites.jpg");
       background-position: -108px 0;
-      transition: all .2s ease;
-      border-radius: 50%;
       &:hover{
         background-position: -108px -36px;
       }
@@ -365,10 +507,12 @@ width: 100%;
     &--linkdin{
       width: 36px;
       height: 36px;
+
+      transition: all .2s ease;
+
+      border-radius: 50%;
       background-image: url("img/social-sprites.jpg");
       background-position: -144px 0;
-      transition: all .2s ease;
-      border-radius: 50%;
       &:hover{
         background-position: -144px -36px;
       }
@@ -376,10 +520,12 @@ width: 100%;
     &--youtube{
       width: 36px;
       height: 36px;
+
+      transition: all .2s ease;
+
+      border-radius: 50%;
       background-image: url("img/social-sprites.jpg");
       background-position: -180px 0;
-      transition: all .2s ease;
-      border-radius: 50%;
       &:hover{
         background-position: -180px -36px;
       }
@@ -388,20 +534,25 @@ width: 100%;
 }//end social
 
 .footer{
-  background-color: #e3e3e3;
   width: 100%;
   padding-top: 4%;
   padding-bottom: 4%;
+
   text-align: center;
 
+  background-color: #e3e3e3;
+
   &__link{
+    margin: 10% 0;
+    padding-right: 1.2%;
+    padding-left: 1.2%;
+
     text-align: center;
     text-decoration: none;
+
+    color:#848484;
+
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
-    color:#848484;
-    margin: 10% 0;
-    padding-left: 1.2%;
-    padding-right: 1.2%;
   }
 }
